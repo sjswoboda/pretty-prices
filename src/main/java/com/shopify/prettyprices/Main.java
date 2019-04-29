@@ -11,6 +11,10 @@ public class Main {
          * HINT: A loop! A boolean! An escape sequence!
          */
         String input;
+
+        /**
+         * FIXME: Hover over the error ("resource leak / scanner is never closed."). What does this mean?
+         */
         Scanner scanner = new Scanner(System.in);
         PriceConverter converter = new PriceConverter();
 
@@ -21,7 +25,7 @@ public class Main {
             BigDecimal value = new BigDecimal(input);
             System.out.println("Converted price: " + converter.convert(value));
         } catch (NumberFormatException ex) {
-            /** 
+            /**
              * FIXME: Without too much code duplication, what's the best way to prompt the user again?
              */
             System.out.println("`" + input + "` is not a valid number. Try again.");
