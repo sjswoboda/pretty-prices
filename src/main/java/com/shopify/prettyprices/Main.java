@@ -8,15 +8,15 @@ public class Main {
     public static void main(String[] args) {
         /**
          * TODO: Can you change this so that a user can make multiple attempts, instead of only 1?
-         * HINT: A loop! A boolean! An escape sequence!
+         * HINT: A loop! A Boolean! An escape sequence!
          */
         String input;
+        Scanner scanner = new Scanner(System.in);
 
         /**
-         * FIXME: Hover over the error ("resource leak / scanner is never closed."). What does this mean?
+         * TODO: Prompt the user for an input for this?
          */
-        Scanner scanner = new Scanner(System.in);
-        PriceConverter converter = new PriceConverter();
+        PriceConverter converter = new PriceConverter(new BigDecimal("1.3"));
 
         System.out.println("Enter amount to convert:" );
         input = scanner.next();
@@ -26,7 +26,7 @@ public class Main {
             System.out.println("Converted price: " + converter.convert(value));
         } catch (NumberFormatException ex) {
             /**
-             * FIXME: Without too much code duplication, what's the best way to prompt the user again?
+             * FIXME: Prompt the user again?
              */
             System.out.println("`" + input + "` is not a valid number. Try again.");
         }
